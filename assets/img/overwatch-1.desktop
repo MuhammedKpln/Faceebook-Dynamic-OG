@@ -1,0 +1,7 @@
+
+[Desktop Entry]
+Type=Application
+Name=Overwatch
+Icon=lutris_overwatch
+Exec=lutris lutris:1
+Categories=Game
