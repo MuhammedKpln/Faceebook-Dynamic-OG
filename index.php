@@ -1,19 +1,11 @@
 <?php 
 define("ACCESS", true);
 require_once("db.php"); 
-$url = 'http://'.$_SERVER['HTTP_HOST'].'/';
-
-
-?>
-<?php
-
-
 
   $al = $db-> prepare("SELECT * FROM icerde ORDER BY RAND() LIMIT 10");
   $al -> execute();
   $row = $al -> fetch(PDO::FETCH_ASSOC);
-
-    ?>
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -41,12 +33,11 @@ $url = 'http://'.$_SERVER['HTTP_HOST'].'/';
   </head>
 
   <body>
-      <script type="text/javascript">
-          // with jQuery
+<script type="text/javascript">
 $.post(
     'https://graph.facebook.com',
     {
-        id: '<?php echo $url; ?>',
+        id: '<?php echo $base; ?>',
         scrape: true
     },
     function(response){
@@ -58,7 +49,7 @@ $.post(
 var fbxhr = new XMLHttpRequest();
 fbxhr.open("POST", "https://graph.facebook.com", true);
 fbxhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-fbxhr.send("<?php echo $url; ?>&scrape=true");
+fbxhr.send("<?php echo $base; ?>&scrape=true");
       </script>
 <style type="text/css">
 body {
@@ -96,34 +87,8 @@ img{
         <h1><?php echo $row["icerde"] ?></h1>
         <p class="lead">Wow, sen tam bir <?php echo $row["icerde"] ?> hayranısın!<br> Alttaki paylaş butonundan paylaşarak hangi tayfadan olduğunu göster millete!</p>
       </div>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:250px"
-     data-ad-client="ca-pub-5089133101627366"
-     data-ad-slot="7433208330"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    </div><!-- /.container -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84746540-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    </div>
 
   </body>
 </html>
