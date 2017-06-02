@@ -1,4 +1,5 @@
 <?php
+require_once("conf.php");
 if (!defined("ACCESS")){
     exit("You don't have access to this!");
 } 
@@ -6,11 +7,11 @@ if (!defined("ACCESS")){
 $user="dbuser";
 $pass="dbpass";
 try {
-    $db = new PDO('mysql:host=localhost;dbname=dbname', $user, $pass);
+    $db = new PDO('mysql:host=localhost;dbname=dbName', $user, $pass);
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
 
-$base = "http://icerde.mcindir.com"
+
 ?>
