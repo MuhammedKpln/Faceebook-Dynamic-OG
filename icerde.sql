@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: localhost:3306
--- Üretim Zamanı: 02 Haz 2017, 17:11:52
+-- Üretim Zamanı: 02 Haz 2017, 22:48:41
 -- Sunucu sürümü: 10.1.22-MariaDB-cll-lve
 -- PHP Sürümü: 5.6.30
 
@@ -37,18 +37,18 @@ CREATE TABLE `icerde` (
 --
 
 INSERT INTO `icerde` (`id`, `icerde`, `ic_resim`) VALUES
-(1, 'Celal Baba', 'cemal'),
-(2, 'Coskun', 'coskun'),
-(3, 'Davut', 'davut'),
-(4, 'Hasan', 'hasan'),
-(5, 'Mert', 'mert'),
-(6, 'Mestan', 'mestan'),
-(7, 'Metin', 'metin'),
-(8, 'Minik', 'minik'),
-(9, 'Musa', 'musa'),
-(10, 'Sarp', 'sarp'),
-(11, 'Yusuf Müdür', 'yusuf'),
-(12, 'Yusufun O?lu', 'yusufogul');
+(1, 'Celal Baba', 'cemal.png'),
+(2, 'Coskun', 'coskun.png'),
+(3, 'Davut', 'davut.png'),
+(4, 'Hasan', 'hasan.png'),
+(5, 'Mert', 'mert.png'),
+(6, 'Mestan', 'mestan.png'),
+(7, 'Metin', 'metin.png'),
+(8, 'Minik', 'minik.png'),
+(9, 'Musa', 'musa.png'),
+(10, 'Sarp', 'sarp.png'),
+(11, 'Yusuf Müdür', 'yusuf.png'),
+(12, 'Yusufun O?lu', 'yusufogul.png');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
