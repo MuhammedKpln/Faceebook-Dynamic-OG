@@ -1,11 +1,11 @@
 <?php
 
 // MySQL tablo ismi
-$table = "icerde";
+$table = "test";
 //MySQL tablosundaki column Örnek: icerde. Paylastigim MYSQL tablosuna bakin
-$title = "icerde";
+$title = "test1";
 //MySQL tablosundaki ismin resmi
-$image = "ic_resim";
+$image = "test1_resim";
 //Site URL
-$base = "http://test.mcindir.com";
+$base = "http://yorum.9oyunn.com";
 

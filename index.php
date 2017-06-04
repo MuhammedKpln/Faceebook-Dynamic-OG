@@ -13,7 +13,7 @@ require_once("gotch.php");
     <meta name="author" content="Muhammed KAPLAN">
       <meta property="og:url"       content="<?php echo $items["url"]; ?>" />
   <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="<?php echo $items["title"]; ?>" />
+  <meta property="og:title"         content="<?php echo $items["title"]; ?> Yorum yapmissin!" />
   <meta property="og:description"   content="Evlat, Buraya tiklayarak daha fazla test görebilirsin! "/>
   <meta property="og:image"         content="<?php echo $items["image"]; ?>" />
 <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
@@ -26,19 +26,24 @@ require_once("gotch.php");
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-      <script>
-        (function(d) {
-          function getData() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://graph.facebook.com/", true);
-            xhr.send("?id=<?php echo $base ?>&scrape=true");
-          }
-          getData();
-          setInterval(function() {
-            getData();
-          }, 500); // 1 saniye
+      <script type="text/javascript">
+          // with jQuery
+$.post(
+    'https://graph.facebook.com',
+    {
+        id: '<?php echo $items["url"] ?>',
+        scrape: true
+    },
+    function(response){
+        console.log(response);
+    }
+);
 
-        })(document);
+// with "vanilla" javascript
+var fbxhr = new XMLHttpRequest();
+fbxhr.open("POST", "https://graph.facebook.com", true);
+fbxhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+fbxhr.send("<?php echo $items["url"]?>&scrape=true");
       </script>
   </head>
 
@@ -79,8 +84,8 @@ img{
     <div class="container">
 
       <div class="starter-template">
-        <div class="title">Seni <b><?php echo $row["icerde"] ?></b> benzetiyorum!</div>
-        <img src="<?php echo $items["image"]; ?>" alt="<?php echo $items["icerde"]; ?>" width="550" height="300">
+        <div class="title"><b><?php echo $items["title"] ?></b> yorum yapmissin!</div>
+        <img src="<?php echo $items["image"]; ?>" alt="<?php echo $items["title"]; ?>" width="550" height="300">
       </div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -93,7 +98,7 @@ img{
     </div><!-- /.container -->
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">Made by <a href="fb.com/hortebrindarr"> Muhammed KAPLAN</a></span>
+        <span class="text-muted">Made by <a href="http://fb.com/hortebrindarr"> Muhammed KAPLAN</a></span>
       </div>
     </footer>
   </body>
